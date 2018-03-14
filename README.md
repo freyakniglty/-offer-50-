@@ -1,0 +1,41 @@
+class Solution {
+public:
+
+```c++
+bool Find(int target, vector<vector<int> > array) {
+    bool found = false;
+    int rows = array[0].size();
+    int cols = array.size();
+    int row = 0;
+    int col = cols-1;
+    while(row<rows && col>=0)
+    {
+        if(target == array[col][row])
+        {
+            found = true;
+            break;
+        }
+        else if(target < array[col][row])
+        {
+            --col;
+        }
+        else
+        {
+            ++row;
+        }
+    
+    }
+    return found;
+}
+```
+
+};
+
+
+
+总结：用while 判断break的时机。比两个for全部循环一遍要科学。
+
+tips: vector 可以用.size()求出大小
+
+
+
